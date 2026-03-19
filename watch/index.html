@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Access Is Ready</title>
+    <meta name="description" content="Watch the presentation now">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://mitolyn.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant Garamond:wght@500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #FAFAF8;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            text-rendering: optimizeLegibility;
+        }
+
+        /* Advertorial Label */
+        .advertorial-label {
+            background: #c41e1e;
+            color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+            padding: 0.3rem 1rem 0;
+            font-size: 0.6rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+
+        /* Urgency Bar */
+        .urgency-bar {
+            background: #c41e1e;
+            color: #fff;
+            text-align: center;
+            padding: 0.4rem 1rem 0.85rem;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Posted Date */
+        .posted-date {
+            text-align: center;
+            padding: 0.4rem 1rem 0.15rem;
+            font-size: 0.75rem;
+            color: #666;
+            font-weight: 400;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1.5rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Headline */
+        h1 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 2.65rem; /* Fallback */
+            font-size: clamp(1.85rem, 4vw + 0.5rem, 2.65rem);
+            font-weight: 600;
+            line-height: 1.15;
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        /* Subheadline */
+        .subheadline {
+            font-size: 1.1rem; /* Fallback */
+            font-size: clamp(0.95rem, 1.5vw + 0.5rem, 1.1rem);
+            color: #6b6b6b;
+            text-align: center;
+            margin-bottom: 2rem;
+            max-width: 540px;
+            line-height: 1.5;
+        }
+
+        /* Video Thumbnail */
+        .video-thumbnail {
+            display: block;
+            max-width: 700px;
+            width: 100%;
+            margin: 0 auto 1.75rem;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .video-thumbnail:hover {
+            transform: scale(1.01);
+            box-shadow: 0 8px 36px rgba(0, 0, 0, 0.18);
+        }
+
+        .video-thumbnail:focus {
+            outline: 3px solid #5c6650;
+            outline-offset: 3px;
+        }
+
+        .video-thumbnail img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1200 / 628;
+            background: #f0f0f0;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            background: #f59e0b;
+            color: #1a1a1a;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 1.25rem 3rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 14px rgba(245, 158, 11, 0.4);
+            transition: all 0.2s ease;
+            margin-bottom: 2rem;
+            min-height: 60px;
+        }
+
+        .cta-button:hover {
+            background: #d97706;
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .cta-button:focus {
+            outline: 3px solid #f59e0b;
+            outline-offset: 3px;
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+        }
+
+        .cta-button svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        /* Testimonial */
+        .testimonial {
+            max-width: 580px;
+            text-align: center;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.2rem; /* Fallback */
+            font-size: clamp(1.05rem, 1.5vw + 0.5rem, 1.2rem);
+            font-style: italic;
+            color: #4a4a4a;
+            line-height: 1.7;
+            padding: 0 1.5rem;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '\201C';
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 3.5rem;
+            font-style: normal;
+            color: #5c6650;
+            opacity: 0.3;
+            position: absolute;
+            top: -1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            line-height: 1;
+        }
+
+        .testimonial-author {
+            display: block;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.85rem;
+            font-style: normal;
+            font-weight: 500;
+            color: #5c6650;
+            margin-top: 0.85rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* Footer */
+        .site-footer {
+            margin-top: 4rem;
+            padding: 3rem 1.5rem;
+            background: #f5f5f3;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .footer-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-disclaimer {
+            font-size: 0.7rem;
+            line-height: 1.7;
+            color: #999;
+        }
+
+        .footer-disclaimer p {
+            margin-bottom: 1em;
+            color: #999;
+        }
+
+        .footer-disclaimer p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer-links {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e5e5e5;
+            font-size: 0.7rem;
+            color: #999;
+        }
+
+        .footer-links a {
+            color: #999;
+            text-decoration: underline;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: #5c6650;
+        }
+
+        .footer-links a:focus {
+            outline: 2px solid #5c6650;
+            outline-offset: 2px;
+        }
+
+        .footer-bottom {
+            margin-top: 1rem;
+            font-size: 0.65rem;
+            color: #999;
+        }
+
+        /* Responsive - Tablet */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 2rem 1.25rem 1.5rem;
+            }
+
+            .testimonial::before {
+                font-size: 3rem;
+                top: -1.25rem;
+            }
+        }
+
+        /* Responsive - Mobile */
+        @media (max-width: 600px) {
+            .advertorial-label {
+                font-size: 0.5rem;
+                color: rgba(255, 255, 255, 0.4);
+                padding: 0.25rem 1rem 0;
+            }
+
+            .urgency-bar {
+                font-size: 1.05rem;
+                padding: 0.35rem 1rem 0.7rem;
+            }
+
+            .posted-date {
+                padding: 0.35rem 1rem 0.1rem;
+                font-size: 0.7rem;
+            }
+
+            .main-content {
+                padding: 0.35rem 1rem 1.5rem;
+            }
+
+            h1 {
+                margin-bottom: 1rem;
+            }
+
+            .subheadline {
+                margin-bottom: 1.75rem;
+            }
+
+            .video-thumbnail {
+                margin-bottom: 1.5rem;
+                border-radius: 4px;
+            }
+
+            .cta-button {
+                padding: 1.1rem 2rem;
+                font-size: 1.2rem;
+                width: 100%;
+                max-width: 340px;
+                text-align: center;
+                min-height: 56px;
+                margin-bottom: 1.75rem;
+            }
+
+            .testimonial {
+                padding: 0 0.5rem;
+                font-size: 1rem;
+            }
+
+            .testimonial::before {
+                font-size: 2.5rem;
+                top: -1rem;
+            }
+
+            .site-footer {
+                margin-top: 3rem;
+                padding: 2rem 1rem;
+            }
+        }
+
+        /* Small mobile */
+        @media (max-width: 375px) {
+            .urgency-bar {
+                font-size: 0.75rem;
+                padding: 0.65rem 0.75rem;
+            }
+
+            h1 {
+                font-size: 1.65rem;
+            }
+
+            .cta-button {
+                max-width: 100%;
+                padding: 1rem 1.5rem;
+            }
+        }
+
+        /* Desktop - ensure proper layout */
+        @media (min-height: 750px) and (min-width: 601px) {
+            body {
+                min-height: 100vh;
+            }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .video-thumbnail,
+            .cta-button,
+            .footer-links a {
+                transition: none;
+            }
+
+            .video-thumbnail:hover {
+                transform: none;
+            }
+
+            .cta-button:hover {
+                transform: none;
+            }
+        }
+
+        /* High contrast mode */
+        @media (prefers-contrast: high) {
+            .urgency-bar {
+                border-bottom: 2px solid #fff;
+            }
+
+            .cta-button {
+                border: 2px solid #fff;
+            }
+
+            .testimonial::before {
+                opacity: 0.6;
+            }
+        }
+
+        /* Print - hide interactive elements */
+        @media print {
+            .urgency-bar,
+            .cta-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>	
+    <div class="advertorial-label">Advertorial</div>
+    <div class="urgency-bar">
+        Due to overwhelming interest, this free presentation is available for a limited time!
+    </div>
+    <div class="posted-date">
+        <script>
+        (function() {
+            var now = new Date();
+            var twoDaysAgo = new Date(now.getTime() - (2 * 24 * 60 * 60 * 1000));
+            var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            document.write('Posted on: ' + months[twoDaysAgo.getMonth()] + '. ' + twoDaysAgo.getDate() + ', ' + twoDaysAgo.getFullYear());
+        })();
+        </script>
+    </div>
+
+    <main class="main-content">
+        <h1>The Simple Method That Melts Away Years of Stubborn Belly Fat</h1>
+
+        <a href="https://mitolyn.com/science/?hop=digitaldbt&hopId=500ebe72-9bdf-4db1-a9d3-be53c5e09f9c" class="video-thumbnail" aria-label="Watch the presentation video" target="_blank" rel="noopener">
+            <img src="assets/1.webp" alt="Watch the presentation" width="1200" height="628" loading="eager" decoding="async" fetchpriority="high">
+        </a>
+
+        <a href="https://mitolyn.com/science/?hop=digitaldbt&hopId=500ebe72-9bdf-4db1-a9d3-be53c5e09f9c" class="cta-button" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            Watch Now
+        </a>
+
+        <blockquote class="testimonial">
+            "I almost didn't watch it. Three weeks later I'm down 19 lbs and my husband noticed the difference before I did."
+            <span class="testimonial-author">— Sarah, 54</span>
+        </blockquote>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-disclaimer">
+                <p>This website provides general wellness information and personal experiences for educational purposes only. The content is not intended to be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Individual results may vary. The statements on this site have not been evaluated by the Food and Drug Administration. Any products referenced are not intended to diagnose, treat, cure, or prevent any disease.</p>
+
+                <p>We respect your privacy and are committed to protecting your personal information. Your email address will only be used to send you the content you requested and occasional updates you may find valuable. You can unsubscribe at any time with a single click. We never sell, rent, or share your information with third parties for marketing purposes.</p>
+
+                <p>Some links on this site may be affiliate links, which means we may receive a small commission if you make a purchase through them. This comes at no additional cost to you and helps support our work. We only recommend products and services that we have carefully vetted and genuinely believe provide value to our readers. Our editorial content is not influenced by advertisers or affiliate partnerships.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="https://daytoday.living/about.html" target="_blank" rel="noopener">About</a> · <a href="https://daytoday.living/terms-of-use.html" target="_blank" rel="noopener">Terms of Use</a> · <a href="https://daytoday.living/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a> · Contact: <a href="mailto:contact@daytoday.living" class="__cf_email__" data-cfemail="">contact@daytoday.living</a>
+            </div>
+
+            <div class="footer-bottom">
+                This site offers wellness tips, insights, and educational content. © 2026 All rights reserved.
+            </div>
+        </div>
+    </footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+</body>
+</html>
